@@ -175,6 +175,11 @@ jobs:
         cd ../../
         ln -sf /${{ env.DIY_WORK }}/openwrt ${GITHUB_WORKSPACE}/openwrt
         source ${GITHUB_WORKSPACE}/build/${{ env.FOLDER_NAME }}/common.sh && Diy_checkout
+        cd ./openwrt
+        git clone https://github.com/Kazagumo/OPi-Zero2-OPPatcher --depth=1
+        cd ./OPi-Zero2-OPPatcher
+        bash ./replace.sh
+        cd ../../
     
     - name: 公 告
       if: env.REPO_TOKEN
