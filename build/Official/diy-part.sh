@@ -6,9 +6,9 @@
 
 
 # 后台IP设置
-export Ipv4_ipaddr="192.168.2.2"            # 修改openwrt后台地址(填0为关闭)
+export Ipv4_ipaddr="192.168.1.1"            # 修改openwrt后台地址(填0为关闭)
 export Netmask_netm="255.255.255.0"         # IPv4 子网掩码（默认：255.255.255.0）(填0为不作修改)
-export Op_name="OpenWrt-123"                # 修改主机名称为OpenWrt-123(填0为不作修改)
+export Op_name="OpenWrt"                # 修改主机名称为OpenWrt-123(填0为不作修改)
 
 # 默认主题设置
 export Mandatory_theme="argon"              # 将bootstrap替换您需要的主题为必选主题(可自行更改您要的,源码要带此主题就行,填写名称也要写对) (填写主题名称,填0为不作修改)
@@ -68,7 +68,6 @@ config.buildinfo
 feeds.buildinfo
 openwrt-x86-64-generic-kernel.bin
 openwrt-x86-64-generic.manifest
-openwrt-x86-64-generic-squashfs-rootfs.img.gz
 sha256sums
 version.buildinfo
 EOF
