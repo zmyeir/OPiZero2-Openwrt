@@ -61,9 +61,11 @@ sed -i 's/"管理权"/"改密码"/g' `egrep "管理权" -rl ./`
 sed -i 's/"带宽监控"/"监控"/g' `egrep "带宽监控" -rl ./`
 
 backup=$PWD
+#备份工作目录以免找不到下一步脚本
+#现在可随意修改工作目录位置
 
-#git clone https://github.com/Kazagumo/OPi-Zero2-OPPatcher --depth=1 ./OPi-Zero2-OPPatcher
-#bash ./OPi-Zero2-OPPatcher/replace.sh
+git clone https://github.com/Kazagumo/OPi-Zero2-OPPatcher --depth=1 ./OPi-Zero2-OPPatcher
+bash ./OPi-Zero2-OPPatcher/replace.sh
 
 mkdir -p files/root
 pushd files/root
@@ -80,6 +82,7 @@ git clone https://github.com/zsh-users/zsh-completions ./.oh-my-zsh/custom/plugi
 # Get .zshrc dotfile
 wget https://raw.githubusercontent.com/SuLingGG/OpenWrt-Rpi/main/data/zsh/.zshrc
 
+#所有操作执行完毕 
 cd $backup
 
 
