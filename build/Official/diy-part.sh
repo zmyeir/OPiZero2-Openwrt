@@ -62,8 +62,7 @@ sed -i 's/"带宽监控"/"监控"/g' `egrep "带宽监控" -rl ./`
 
 
 git clone https://github.com/Kazagumo/OPi-Zero2-OPPatcher --depth=1
-cd ./OPi-Zero2-OPPatcher
-bash ./replace.sh
+bash ./OPi-Zero2-OPPatcher/replace.sh
 
 mkdir -p files/root
 pushd files/root
