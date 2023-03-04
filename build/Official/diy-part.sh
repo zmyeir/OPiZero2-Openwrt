@@ -60,8 +60,8 @@ sed -i 's/"Web 管理"/"Web管理"/g' `egrep "Web 管理" -rl ./`
 sed -i 's/"管理权"/"改密码"/g' `egrep "管理权" -rl ./`
 sed -i 's/"带宽监控"/"监控"/g' `egrep "带宽监控" -rl ./`
 
-git clone https://github.com/Kazagumo/OPi-Zero2-OPPatcher --depth=1 ./OPi-Zero2-OPPatcher
-bash ./OPi-Zero2-OPPatcher/replace.sh
+#git clone https://github.com/Kazagumo/OPi-Zero2-OPPatcher --depth=1 ./OPi-Zero2-OPPatcher
+#bash ./OPi-Zero2-OPPatcher/replace.sh
 
 mkdir -p files/root
 pushd files/root
