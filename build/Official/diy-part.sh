@@ -59,6 +59,8 @@ sed -i 's/"USB 打印服务器"/"打印服务"/g' `egrep "USB 打印服务器" -
 sed -i 's/"Web 管理"/"Web管理"/g' `egrep "Web 管理" -rl ./`
 sed -i 's/"管理权"/"改密码"/g' `egrep "管理权" -rl ./`
 sed -i 's/"带宽监控"/"监控"/g' `egrep "带宽监控" -rl ./`
+#set zsh as default shell
+sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 backup=$PWD
 #备份工作目录以免找不到下一步脚本
@@ -81,6 +83,24 @@ git clone https://github.com/zsh-users/zsh-completions ./.oh-my-zsh/custom/plugi
 
 # Get .zshrc dotfile
 wget https://raw.githubusercontent.com/SuLingGG/OpenWrt-Rpi/main/data/zsh/.zshrc
+
+popd
+
+mkdir -p files/etc/openclash/core
+
+CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-arm64.tar.gz"
+CLASH_TUN_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/premium/clash-linux-arm64-2023.03.04.gz"
+CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
+GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+
+wget -qO- $CLASH_DEV_URL | tar xOvz > files/etc/openclash/core/clash
+wget -qO- $CLASH_TUN_URL | gunzip -c > files/etc/openclash/core/clash_tun
+wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
+wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
+wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
+
+chmod +x files/etc/openclash/core/clash*
 
 #所有操作执行完毕 
 cd $backup
