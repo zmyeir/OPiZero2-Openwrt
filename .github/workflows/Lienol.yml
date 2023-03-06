@@ -27,6 +27,7 @@ on:
           - '21.02'
           - 'master'
           - '19.07-test'
+          - '22.03'
       CONFIG_FILE:
         description: '请选择配置文件'
         required: true
