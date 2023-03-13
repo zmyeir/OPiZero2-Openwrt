@@ -66,6 +66,12 @@ backup=$PWD
 #备份工作目录以免找不到下一步脚本
 #现在可随意修改工作目录位置
 
+git clone https://github.com/shidahuilang/openwrt-package.git --depth=1 --branch=official-master ./packages/addons
+
+git clone https://github.com/Kazagumo/luci-app-3ginfo-lite-zhcn ./packages/3glite
+
+git clone https://github.com/4IceG/luci-app-sms-tool ./packages/smstool
+
 git clone https://github.com/Kazagumo/OPi-Zero2-OPPatcher --depth=1 ./OPi-Zero2-OPPatcher
 bash ./OPi-Zero2-OPPatcher/replace.sh
 
