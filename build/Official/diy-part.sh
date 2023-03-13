@@ -68,6 +68,10 @@ backup=$PWD
 
 git clone https://github.com/shidahuilang/openwrt-package.git --depth=1 --branch=official-master ./packages/addons
 
+git clone https://github.com/jerrykuku/luci-theme-argon.git ./packages/argon/luci-theme-argon
+
+git clone https://github.com/jerrykuku/luci-app-argon-config.git ./packages/argon/luci-app-argon-config
+
 git clone https://github.com/Kazagumo/luci-app-3ginfo-lite-zhcn ./packages/3glite
 
 git clone https://github.com/4IceG/luci-app-sms-tool ./packages/smstool
